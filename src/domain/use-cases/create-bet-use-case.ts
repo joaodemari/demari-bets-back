@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { betRepository } from '../repositories/betRepository';
 import { BetEntity } from '../entities/bet';
-import { Either, left, right } from 'src/core/tools/either';
+import { Either, left, right } from '../../core/tools/either';
 
 interface CreateBetUseCaseProps {
   user_name: string;

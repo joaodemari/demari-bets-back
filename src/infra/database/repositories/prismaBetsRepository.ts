@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { BetEntity } from 'src/domain/entities/bet';
-import { betRepository } from 'src/domain/repositories/betRepository';
+import { BetEntity } from '../../../domain/entities/bet';
+import { betRepository } from '../../../domain/repositories/betRepository';
 import { PrismaService } from '../prisma.service';
 
 @Injectable()

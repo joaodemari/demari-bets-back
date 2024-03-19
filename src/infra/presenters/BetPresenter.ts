@@ -1,4 +1,4 @@
-import { BetEntity } from 'src/domain/entities/bet';
+import { BetEntity } from '../../domain/entities/bet';
 
 export class BetPresenter {
   static toHttp(entity: BetEntity) {

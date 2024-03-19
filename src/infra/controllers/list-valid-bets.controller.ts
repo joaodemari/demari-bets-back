@@ -1,5 +1,5 @@
 import { BadRequestException, Controller, Get } from '@nestjs/common';
-import { ListValidBetsUseCase } from 'src/domain/use-cases/list-valid-bets-use-case';
+import { ListValidBetsUseCase } from '../../domain/use-cases/list-valid-bets-use-case';
 import { BetPresenter } from '../presenters/BetPresenter';
 
 @Controller()

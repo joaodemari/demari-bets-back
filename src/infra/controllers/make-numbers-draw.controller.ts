@@ -4,7 +4,7 @@ import {
   InternalServerErrorException,
   Post,
 } from '@nestjs/common';
-import { MakeNumbersDrawUseCase } from 'src/domain/use-cases/make-numbers-draw-use-case';
+import { MakeNumbersDrawUseCase } from '../../domain/use-cases/make-numbers-draw-use-case';
 import { MakeNumbersDrawPresenter } from '../presenters/makeNumbersDrawPresenter';
 
 @Controller()

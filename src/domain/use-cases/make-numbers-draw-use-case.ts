@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { Either, right } from 'src/core/tools/either';
+import { Either, right } from '../../core/tools/either';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { betRepository } from '../repositories/betRepository';
 import { BetEntity } from '../entities/bet';

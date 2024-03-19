@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { betRepository } from '../repositories/betRepository';
-import { Either, left, right } from 'src/core/tools/either';
+import { Either, left, right } from '../../core/tools/either';
 import { BetEntity } from '../entities/bet';
 
 type ListValidBetsResponse = Either<Error, BetEntity[]>;

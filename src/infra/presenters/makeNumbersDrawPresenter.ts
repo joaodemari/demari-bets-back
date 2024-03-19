@@ -1,4 +1,4 @@
-import { MakeNumbersDrawUseCaseResponse } from 'src/domain/use-cases/make-numbers-draw-use-case';
+import { MakeNumbersDrawUseCaseResponse } from '../../domain/use-cases/make-numbers-draw-use-case';
 
 export class MakeNumbersDrawPresenter {
   static toHttp(response: MakeNumbersDrawUseCaseResponse) {

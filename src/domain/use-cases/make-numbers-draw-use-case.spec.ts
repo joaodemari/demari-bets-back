@@ -1,21 +1,18 @@
 // import { InMemoryBetsRepository } from 'test/repositories/in-memory-bets-repository';
 import { CreateBetUseCase } from './create-bet-use-case';
 import { MakeNumbersDrawUseCase } from './make-numbers-draw-use-case';
-import { PrismaBetsReopsitory } from 'src/infra/database/repositories/prismaBetsRepository';
-import { PrismaNumbersDrawRepository } from 'src/infra/database/repositories/prismaNumbersDrawRepository';
-import { PrismaService } from 'src/infra/database/prisma.service';
+import { InMemoryBetsRepository } from '../../../test/repositories/in-memory-bets-repository';
+import { InMemoryNumbersDrawRepository } from '../../../test/repositories/in-memory-numbers-draw-repository';
 
-let inMemoryBetsRepository: PrismaBetsReopsitory;
-let prisma: PrismaService;
-let inMemoryNumbersDrawRepository: PrismaNumbersDrawRepository;
+let inMemoryBetsRepository: InMemoryBetsRepository;
+let inMemoryNumbersDrawRepository: InMemoryNumbersDrawRepository;
 let createBet: CreateBetUseCase;
 let sut: MakeNumbersDrawUseCase;
 
 describe('Create Member', () => {
   beforeEach(() => {
-    prisma = new PrismaService();
-    inMemoryBetsRepository = new PrismaBetsReopsitory(prisma);
-    inMemoryNumbersDrawRepository = new PrismaNumbersDrawRepository(prisma);
+    inMemoryBetsRepository = new InMemoryBetsRepository();
+    inMemoryNumbersDrawRepository = new InMemoryNumbersDrawRepository();
     createBet = new CreateBetUseCase(inMemoryBetsRepository);
     sut = new MakeNumbersDrawUseCase(
       inMemoryBetsRepository,

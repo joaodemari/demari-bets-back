@@ -1,4 +1,4 @@
-import { InMemoryBetsRepository } from 'test/repositories/in-memory-bets-repository';
+import { InMemoryBetsRepository } from '../../../test/repositories/in-memory-bets-repository';
 import { CreateBetUseCase } from './create-bet-use-case';
 
 let inMemoryBetsRepository: InMemoryBetsRepository;

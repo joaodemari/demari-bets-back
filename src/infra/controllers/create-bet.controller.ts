@@ -8,8 +8,8 @@ import {
 import {
   CreateBetRequestDTO,
   createBetRequestSchema,
-} from 'src/infra/dtos/createBetRequestDTO';
-import { CreateBetUseCase } from 'src/domain/use-cases/create-bet-use-case';
+} from '../../infra/dtos/createBetRequestDTO';
+import { CreateBetUseCase } from '../../domain/use-cases/create-bet-use-case';
 import { UseZodGuard } from 'nestjs-zod';
 
 @Controller()

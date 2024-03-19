@@ -1,5 +1,5 @@
-import { BetEntity } from 'src/domain/entities/bet';
-import { betRepository } from 'src/domain/repositories/betRepository';
+import { BetEntity } from '../../src/domain/entities/bet';
+import { betRepository } from '../../src/domain/repositories/betRepository';
 
 export class InMemoryBetsRepository implements betRepository {
   items: BetEntity[] = [];
