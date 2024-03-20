@@ -1,4 +1,4 @@
-import { Either } from 'src/core/tools/either';
+import { Either } from '../../core/tools/either';
 import { betRepository } from '../repositories/betRepository';
 import { BetEntity } from '../entities/bet';
 import { NumbersDrawRepository } from '../repositories/numbersDrawRepository';

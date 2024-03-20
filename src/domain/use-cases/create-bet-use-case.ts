@@ -23,18 +23,8 @@ export class CreateBetUseCase {
     surprise,
   }: CreateBetUseCaseProps): Promise<CreateBetUseCaseResponse> {
     const WrongProps = (): { message: string; isWrong: boolean } => {
-      if (!(numbers.length === 5 || numbers.length === 0))
-        return { message: 'Bet must have 5 or 0 numbers', isWrong: true };
-      if (surprise && numbers.length === 5)
-        return {
-          message: 'Surprise bets must not have numbers',
-          isWrong: true,
-        };
-      if (!surprise && numbers.length === 0)
-        return {
-          message: 'Bets that are not surprise must have numbers',
-          isWrong: true,
-        };
+      if (!(numbers.length === 5))
+        return { message: 'Bet must have 5 numbers', isWrong: true };
       if (!user_cpf || !user_name)
         return { message: 'A bet must have a name or a cpf', isWrong: true };
       return { message: 'Everything OK', isWrong: false };
@@ -47,16 +37,6 @@ export class CreateBetUseCase {
     }
 
     const lastBet = await this.repository.getLastBet();
-
-    if (surprise) {
-      numbers = [];
-      do {
-        const number = Math.floor(Math.random() * 50) + 1;
-        if (!numbers.includes(number)) {
-          numbers.push(number);
-        }
-      } while (numbers.length < 5);
-    }
 
     const bet: BetEntity = BetEntity.create({
       created_at: new Date(),

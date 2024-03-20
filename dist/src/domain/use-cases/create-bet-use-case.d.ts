@@ -1,6 +1,6 @@
 import { betRepository } from '../repositories/betRepository';
 import { BetEntity } from '../entities/bet';
-import { Either } from 'src/core/tools/either';
+import { Either } from '../../core/tools/either';
 interface CreateBetUseCaseProps {
     user_name: string;
     user_cpf: string;

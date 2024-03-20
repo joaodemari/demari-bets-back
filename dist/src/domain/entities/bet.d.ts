@@ -1,5 +1,5 @@
-import { Entity } from 'src/core/tools/Entity';
-import { Optional } from 'src/core/tools/optional';
+import { Entity } from '../../core/tools/Entity';
+import { Optional } from '../../core/tools/optional';
 interface BetEntityProps {
     won: boolean;
     isValid: boolean;

@@ -14,7 +14,7 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CreateBetController = void 0;
 const common_1 = require("@nestjs/common");
-const createBetRequestDTO_1 = require("../dtos/createBetRequestDTO");
+const createBetRequestDTO_1 = require("../../infra/dtos/createBetRequestDTO");
 const create_bet_use_case_1 = require("../../domain/use-cases/create-bet-use-case");
 const nestjs_zod_1 = require("nestjs-zod");
 let CreateBetController = class CreateBetController {

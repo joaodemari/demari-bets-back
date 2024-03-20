@@ -1,5 +1,5 @@
 import { BadRequestException, InternalServerErrorException } from '@nestjs/common';
-import { MakeNumbersDrawUseCase } from 'src/domain/use-cases/make-numbers-draw-use-case';
+import { MakeNumbersDrawUseCase } from '../../domain/use-cases/make-numbers-draw-use-case';
 export declare class MakeNumbersDrawController {
     private readonly makeNumbersDrawn;
     constructor(makeNumbersDrawn: MakeNumbersDrawUseCase);

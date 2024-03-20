@@ -1,4 +1,4 @@
-import { BetEntity } from 'src/domain/entities/bet';
+import { BetEntity } from '../../domain/entities/bet';
 export declare class BetPresenter {
     static toHttp(entity: BetEntity): {
         id: string;
