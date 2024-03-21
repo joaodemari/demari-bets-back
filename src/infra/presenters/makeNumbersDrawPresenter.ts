@@ -13,6 +13,7 @@ export class MakeNumbersDrawPresenter {
         };
       }),
       sortedNumbers: response.value.sortedNumbers,
+      numbersAndCount : response.value.numbersAndCount
     };
   }
 }

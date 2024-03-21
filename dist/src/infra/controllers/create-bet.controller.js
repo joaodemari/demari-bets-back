@@ -17,6 +17,7 @@ const common_1 = require("@nestjs/common");
 const createBetRequestDTO_1 = require("../../infra/dtos/createBetRequestDTO");
 const create_bet_use_case_1 = require("../../domain/use-cases/create-bet-use-case");
 const nestjs_zod_1 = require("nestjs-zod");
+const BetPresenter_1 = require("../presenters/BetPresenter");
 let CreateBetController = class CreateBetController {
     constructor(createBetUseCase) {
         this.createBetUseCase = createBetUseCase;
@@ -33,7 +34,7 @@ let CreateBetController = class CreateBetController {
             if (response.isLeft()) {
                 return new common_1.BadRequestException(response.value.message);
             }
-            return { id: response.value.id };
+            return BetPresenter_1.BetPresenter.toHttp(response.value);
         }
         catch (error) {
             return new common_1.InternalServerErrorException(error);

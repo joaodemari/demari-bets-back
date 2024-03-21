@@ -103,7 +103,7 @@ let MakeNumbersDrawUseCase = class MakeNumbersDrawUseCase {
         await this.numbersDrawRepository.makeNumbersDraw(numbersDraw);
         await this.betRepository.invalidateBetsBeforeDate(numbersDraw.createdAt);
         await this.betRepository.setAsWon(winners);
-        return (0, either_1.right)({ winners, sortedNumbers });
+        return (0, either_1.right)({ winners, sortedNumbers, hashMapNumbersAndCpfs });
     }
 };
 exports.MakeNumbersDrawUseCase = MakeNumbersDrawUseCase;

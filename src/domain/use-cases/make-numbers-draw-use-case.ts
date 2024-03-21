@@ -11,6 +11,10 @@ export type MakeNumbersDrawUseCaseResponse = Either<
   {
     winners: BetEntity[];
     sortedNumbers: number[];
+    numbersAndCount: {
+      number:number;
+      count:number;
+    }[]
   }
 >;
 
@@ -80,7 +84,12 @@ export class MakeNumbersDrawUseCase {
 
       const winners: BetEntity[] =
         await this.betRepository.getBetsByCpfAndIdUnico(winnersCpfsAndIdUnico);
-      return right({ winners, sortedNumbers });
+      return right({ winners, sortedNumbers, numbersAndCount : Object.entries(hashMapNumbersAndCpfs).map(([key, value]) => {
+        return {
+          number: +key,
+          count: value.length
+        }
+      }) });
     }
 
     let sortedNumber: number;
@@ -131,6 +140,13 @@ export class MakeNumbersDrawUseCase {
     await this.numbersDrawRepository.makeNumbersDraw(numbersDraw);
     await this.betRepository.invalidateBetsBeforeDate(numbersDraw.createdAt);
     await this.betRepository.setAsWon(winners);
-    return right({ winners, sortedNumbers });
+    return right({ winners,
+      sortedNumbers,
+      numbersAndCount : Object.entries(hashMapNumbersAndCpfs).map(([key, value]) => {
+      return {
+        number: +key,
+        count: value.length
+      }
+    })});
   }
 }
