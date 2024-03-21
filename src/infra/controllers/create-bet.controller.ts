@@ -11,6 +11,7 @@ import {
 } from '../../infra/dtos/createBetRequestDTO';
 import { CreateBetUseCase } from '../../domain/use-cases/create-bet-use-case';
 import { UseZodGuard } from 'nestjs-zod';
+import { BetPresenter } from '../presenters/BetPresenter';
 
 @Controller()
 export class CreateBetController {
@@ -33,7 +34,7 @@ export class CreateBetController {
         return new BadRequestException(response.value.message);
       }
 
-      return { id: response.value.id };
+      return BetPresenter.toHttp(response.value);
     } catch (error) {
       return new InternalServerErrorException(error);
     }
